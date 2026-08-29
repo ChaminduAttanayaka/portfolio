@@ -60,6 +60,40 @@
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span>Let's Talk</span>
           </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span class="hamburger-bar bar-1"></span>
+            <span class="hamburger-bar bar-2"></span>
+            <span class="hamburger-bar bar-3"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <div class="mobile-drawer-inner">
+          <div class="mobile-drawer-header">
+            <div class="mobile-user-tag">
+              <span class="online-status-dot" style="position:static;display:inline-block;margin-right:6px;"></span>
+              <span>Available for Senior DevOps Roles</span>
+            </div>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">&times;</button>
+          </div>
+          <nav class="mobile-nav-links">
+            <a href="#home" class="mobile-nav-item active"><span class="m-icon">⚡</span> Home</a>
+            <a href="#overview" class="mobile-nav-item"><span class="m-icon">💎</span> Architecture Overview</a>
+            <a href="#architecture" class="mobile-nav-item"><span class="m-icon">🛠️</span> Tech Matrix &amp; Stack</a>
+            <a href="#repositories" class="mobile-nav-item"><span class="m-icon">📦</span> Repositories (9)</a>
+            <a href="#credentials" class="mobile-nav-item"><span class="m-icon">🏆</span> Certifications (12+)</a>
+            <a href="#contact" class="mobile-nav-item"><span class="m-icon">📬</span> Contact &amp; Connect</a>
+          </nav>
+          <div class="mobile-drawer-footer">
+            <a href="mailto:chamindu.m.a@gmail.com" class="btn-primary mobile-cta-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Email: Chamindu.m.a@gmail.com</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -142,21 +176,17 @@
                     <span class="id-dot id-dot-yellow"></span>
                     <span class="id-dot id-dot-green"></span>
                   </div>
-                  <span class="id-card-sys-tag">SYS // DEVOPS-ARCHITECT</span>
+                  <span class="id-card-sys-tag">DEVOPS-ENGINEER</span>
                   <span class="id-card-status"><span class="id-pulse-dot"></span>ACTIVE</span>
                 </div>
 
                 <!-- Sleek Avatar Center Stage -->
                 <div class="id-avatar-showcase">
-                  <div class="avatar-orbit-ring"></div>
-                  <div class="avatar-ambient-glow"></div>
                   <div class="avatar-frame">
+                    <div class="avatar-orbit-ring"></div>
+                    <div class="avatar-ambient-glow"></div>
                     <img src="assets/img/profile.jpg" alt="Chamindu Attanayaka" class="portrait-image-element" id="hero-portrait-img" />
                     <span class="avatar-verified-badge" title="AWS Solutions Architect Pro &amp; Terraform Certified">✓</span>
-                  </div>
-                  <div class="avatar-cert-chip">
-                    <i class="devicon-amazonwebservices-plain colored"></i>
-                    <span>AWS SA Professional</span>
                   </div>
                 </div>
 
@@ -164,7 +194,7 @@
                 <div class="portrait-card-info">
                   <div class="id-engineer-meta text-center">
                     <h3 class="portrait-engineer-name">Chamindu Attanayaka</h3>
-                    <p class="portrait-engineer-title">DevOps Engineer &bull; MillenniumIT ESP</p>
+                    <p class="portrait-engineer-title">DevOps Engineer &bull; Cloud Infrastructure</p>
                   </div>
 
                   <div class="id-telemetry-grid">
@@ -226,7 +256,7 @@
 
           <div class="cli-body-stream" id="terminal-stream">
             <p class="cli-line"><span class="cli-prompt">chamindu@cloud:~$</span> <span class="cli-cmd">init-session --profile ChaminduAttanayaka</span></p>
-            <p class="cli-output cyan-text">✦ <strong>Chamindu Attanayaka</strong> | DevOps Engineer @ MillenniumIT ESP</p>
+            <p class="cli-output cyan-text">✦ <strong>Chamindu Attanayaka</strong> | DevOps Engineer &amp; Platform Architect</p>
             <p class="cli-output green-text">✓ AWS Solutions Architect Pro • Kubernetes &amp; Observability Specialist</p>
             <p class="cli-output">✓ Infrastructure: AWS Multi-VPC, Amazon EKS Fargate/Nodes, Azure AKS, Terraform IaC</p>
             <p class="cli-output">✓ Open-Source: 9 Production Repositories Synced (CI/CD, Monitoring, K8s HPA/PDB)</p>
@@ -584,7 +614,9 @@
                 <div class="orb-dashed-halo halo-cw"></div>
                 <div class="orb-pulse-glow"></div>
                 <div class="orb-icon-inner">
-                  <img src="/assets/img/wso2.svg" alt="WSO2" class="tech-orb-img" loading="lazy" />
+                  <svg viewBox="0 0 100 50" class="tech-orb-img" aria-label="WSO2">
+                    <text x="50" y="36" fill="#FF7300" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" text-anchor="middle" letter-spacing="-1">WSO<tspan fill="#FFFFFF">2</tspan></text>
+                  </svg>
                 </div>
               </div>
 
@@ -610,7 +642,12 @@
                 <div class="orb-dashed-halo halo-cw"></div>
                 <div class="orb-pulse-glow"></div>
                 <div class="orb-icon-inner">
-                  <img src="/assets/img/nexus.svg" alt="Sonatype Nexus" class="tech-orb-img" loading="lazy" />
+                  <svg viewBox="0 0 100 100" class="tech-orb-img" aria-label="Sonatype Nexus">
+                    <polygon points="50,15 85,35 50,55 15,35" fill="#2096DE" />
+                    <polygon points="15,35 50,55 50,90 15,70" fill="#1483C2" />
+                    <polygon points="50,55 85,35 85,70 50,90" fill="#0E5E8C" />
+                    <circle cx="50" cy="55" r="10" fill="none" stroke="#FFFFFF" stroke-width="3" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -636,7 +673,17 @@
                 <div class="orb-dashed-halo halo-cw"></div>
                 <div class="orb-pulse-glow"></div>
                 <div class="orb-icon-inner">
-                  <img src="/assets/img/cisco.svg" alt="Cisco" class="tech-orb-img" loading="lazy" />
+                  <svg viewBox="0 0 100 60" class="tech-orb-img" fill="#00bceb" aria-label="Cisco">
+                    <rect x="6" y="28" width="6" height="24" rx="3" />
+                    <rect x="16" y="16" width="6" height="36" rx="3" />
+                    <rect x="26" y="28" width="6" height="24" rx="3" />
+                    <rect x="36" y="8" width="6" height="44" rx="3" />
+                    <rect x="47" y="0" width="6" height="52" rx="3" />
+                    <rect x="58" y="8" width="6" height="44" rx="3" />
+                    <rect x="68" y="28" width="6" height="24" rx="3" />
+                    <rect x="78" y="16" width="6" height="36" rx="3" />
+                    <rect x="88" y="28" width="6" height="24" rx="3" />
+                  </svg>
                 </div>
               </div>
 
@@ -649,7 +696,14 @@
                 <div class="orb-dashed-halo halo-ccw"></div>
                 <div class="orb-pulse-glow"></div>
                 <div class="orb-icon-inner">
-                  <img src="/assets/img/vmware.svg" alt="VMware" class="tech-orb-img" loading="lazy" />
+                  <svg viewBox="0 0 100 70" class="tech-orb-img" aria-label="VMware">
+                    <rect x="10" y="8" width="24" height="24" rx="3" fill="#0095D3" />
+                    <rect x="38" y="8" width="24" height="24" rx="3" fill="#60A5FA" />
+                    <rect x="66" y="8" width="24" height="24" rx="3" fill="#0095D3" />
+                    <rect x="10" y="36" width="24" height="24" rx="3" fill="#94A3B8" />
+                    <rect x="38" y="36" width="24" height="24" rx="3" fill="#0095D3" />
+                    <rect x="66" y="36" width="24" height="24" rx="3" fill="#60A5FA" />
+                  </svg>
                 </div>
               </div>
 
@@ -966,7 +1020,7 @@
           <!-- 1. AWS SA Professional -->
           <div class="credential-card glow-hover-card" id="cert-sap">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/aws-sap.png" alt="AWS Certified Solutions Architect - Professional Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/aws-sap.png" alt="AWS Certified Solutions Architect - Professional Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
@@ -982,7 +1036,7 @@
           <!-- 2. AWS SA Associate -->
           <div class="credential-card glow-hover-card" id="cert-saa">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/aws-saa.png" alt="AWS Certified Solutions Architect - Associate Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/aws-saa.png" alt="AWS Certified Solutions Architect - Associate Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
@@ -998,7 +1052,7 @@
           <!-- 3. AWS SysOps Administrator Associate -->
           <div class="credential-card glow-hover-card" id="cert-soa">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/aws-soa.png" alt="AWS Certified SysOps Administrator - Associate Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/aws-soa.png" alt="AWS Certified SysOps Administrator - Associate Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
@@ -1014,7 +1068,7 @@
           <!-- 4. HashiCorp Terraform Associate -->
           <div class="credential-card glow-hover-card" id="cert-terraform">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/hashicorp-terraform.png" alt="HashiCorp Certified: Terraform Associate Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/hashicorp-terraform.png" alt="HashiCorp Certified: Terraform Associate Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-hashi"><i class="devicon-terraform-plain colored"></i> HashiCorp</span>
@@ -1030,7 +1084,7 @@
           <!-- 5. Aviatrix Multi-Cloud Network Associate -->
           <div class="credential-card glow-hover-card" id="cert-aviatrix">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/aviatrix-mcna.png" alt="Aviatrix Multi-Cloud Network Associate Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/aviatrix-mcna.png" alt="Aviatrix Multi-Cloud Network Associate Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-aviatrix">Aviatrix</span>
@@ -1046,7 +1100,7 @@
           <!-- 6. Google IT Support Professional -->
           <div class="credential-card glow-hover-card" id="cert-google">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/google-it-support.png" alt="Google IT Support Professional Certificate Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/google-it-support.png" alt="Google IT Support Professional Certificate Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-google"><i class="devicon-googlecloud-plain colored"></i> Google</span>
@@ -1062,7 +1116,7 @@
           <!-- 7. Cisco CCNA: Intro to Networks -->
           <div class="credential-card glow-hover-card" id="cert-cisco">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/cisco-ccna.png" alt="Cisco CCNA: Introduction to Networks Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/cisco-ccna.png" alt="Cisco CCNA: Introduction to Networks Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-cisco">Cisco</span>
@@ -1078,7 +1132,7 @@
           <!-- 8. AWS Academy Cloud Foundations -->
           <div class="credential-card glow-hover-card" id="cert-aws-grad">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/aws-academy.png" alt="AWS Academy Graduate Cloud Foundations Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/aws-academy.png" alt="AWS Academy Graduate Cloud Foundations Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
@@ -1094,7 +1148,7 @@
           <!-- 9. Cisco Networking Academy Learn-A-Thon 2023 -->
           <div class="credential-card glow-hover-card" id="cert-cisco-learnathon">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/cisco-learnathon.png" alt="Cisco Networking Academy Learn-A-Thon 2023 Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/cisco-learnathon.png" alt="Cisco Networking Academy Learn-A-Thon 2023 Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-cisco">Cisco</span>
@@ -1110,7 +1164,7 @@
           <!-- 10. Cisco Introduction to Packet Tracer -->
           <div class="credential-card glow-hover-card" id="cert-cisco-pt">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/cisco-packet-tracer.png" alt="Cisco Introduction to Packet Tracer Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/cisco-packet-tracer.png" alt="Cisco Introduction to Packet Tracer Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-cisco">Cisco</span>
@@ -1126,7 +1180,7 @@
           <!-- 11. Cisco Introduction to IoT -->
           <div class="credential-card glow-hover-card" id="cert-cisco-iot">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/cisco-iot.png" alt="Cisco Introduction to IoT Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/cisco-iot.png" alt="Cisco Introduction to IoT Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-cisco">Cisco</span>
@@ -1142,7 +1196,7 @@
           <!-- 12. Cisco Introduction to Cybersecurity -->
           <div class="credential-card glow-hover-card" id="cert-cisco-cyber">
             <div class="cred-badge-box">
-              <img src="/assets/img/badges/cisco-cybersecurity.png" alt="Cisco Introduction to Cybersecurity Badge" class="cred-badge-img" loading="lazy" />
+              <img src="assets/img/badges/cisco-cybersecurity.png" alt="Cisco Introduction to Cybersecurity Badge" class="cred-badge-img" loading="lazy" />
             </div>
             <div class="cred-card-info">
               <span class="cred-issuer-tag tag-cisco">Cisco</span>

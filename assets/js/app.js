@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
+  initMobileNavigation();
   initBackToTop();
   initTypewriter();
   initConstellationCanvas();
@@ -106,12 +107,23 @@ function initConstellationCanvas() {
 
   const ctx = canvas.getContext('2d');
   let width, height;
+  let dpr = 1;
   let particles = [];
   let mouse = { x: null, y: null, radius: 140 };
 
   function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2.5); // Support high-resolution retina screens
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // reset transform
+    ctx.scale(dpr, dpr); // scale context for ultra-crisp, smooth circles
+
     createParticles();
   }
 
@@ -119,19 +131,21 @@ function initConstellationCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.7;
-      this.vy = (Math.random() - 0.5) * 0.7;
-      this.radius = Math.random() * 1.8 + 1;
-      this.baseAlpha = Math.random() * 0.5 + 0.3;
-      this.color = Math.random() > 0.4 ? '#38bdf8' : '#818cf8';
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 1.6 + 1.2;
+      this.baseAlpha = Math.random() * 0.45 + 0.35;
+      this.color = Math.random() > 0.45 ? 'rgba(56, 189, 248, ' : 'rgba(129, 140, 248, ';
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
 
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
+      if (this.x < 0) { this.x = 0; this.vx *= -1; }
+      if (this.x > width) { this.x = width; this.vx *= -1; }
+      if (this.y < 0) { this.y = 0; this.vy *= -1; }
+      if (this.y > height) { this.y = height; this.vy *= -1; }
 
       // Mouse repulsion/interaction
       if (mouse.x !== null && mouse.y !== null) {
@@ -141,24 +155,23 @@ function initConstellationCanvas() {
         if (dist < mouse.radius) {
           const angle = Math.atan2(dy, dx);
           const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= Math.cos(angle) * force * 3;
-          this.y -= Math.sin(angle) * force * 3;
+          this.x -= Math.cos(angle) * force * 2.5;
+          this.y -= Math.sin(angle) * force * 2.5;
         }
       }
     }
 
     draw() {
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.globalAlpha = this.baseAlpha;
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      ctx.fillStyle = `${this.color}${this.baseAlpha})`;
       ctx.fill();
     }
   }
 
   function createParticles() {
     particles = [];
-    const count = Math.min(Math.floor((width * height) / 14000), 85);
+    const count = Math.min(Math.floor((width * height) / 16000), 75);
     for (let i = 0; i < count; i++) {
       particles.push(new Particle());
     }
@@ -166,6 +179,9 @@ function initConstellationCanvas() {
 
   function connectParticles() {
     const maxDist = 130;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -173,13 +189,12 @@ function initConstellationCanvas() {
         const dist = Math.hypot(dx, dy);
 
         if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.18;
+          const alpha = (1 - dist / maxDist) * 0.16;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = '#38bdf8';
-          ctx.globalAlpha = alpha;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+          ctx.lineWidth = 0.75;
           ctx.stroke();
         }
       }
@@ -198,7 +213,12 @@ function initConstellationCanvas() {
     requestAnimationFrame(animate);
   }
 
-  window.addEventListener('resize', resize);
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resize, 100);
+  });
+
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -282,7 +302,7 @@ function initTerminalCli() {
 <p class="cli-output">&bull; <strong>skills</strong>     - Complete technology stack &amp; cloud-native tools</p>
 <p class="cli-output">&bull; <strong>repos</strong>      - 9 Open-source production repositories with GitHub links</p>
 <p class="cli-output">&bull; <strong>certs</strong>      - 12+ Credly verified certifications (AWS SAP, SAA, SOA, AZ-104)</p>
-<p class="cli-output">&bull; <strong>exp</strong>        - Industry experience (MillenniumIT ESP, GIG Gulf, Dialog Genie, NOC)</p>
+<p class="cli-output">&bull; <strong>exp</strong>        - Industry experience (GIG Gulf, Dialog Genie, NOC Support)</p>
 <p class="cli-output">&bull; <strong>status</strong>     - Real-time cloud cluster &amp; telemetry monitoring</p>
 <p class="cli-output">&bull; <strong>contact</strong>    - Email, LinkedIn, GitHub, and Credly profile channels</p>
 <p class="cli-output">&bull; <strong>clear</strong>      - Clear terminal output stream</p>
@@ -290,7 +310,7 @@ function initTerminalCli() {
     whoami: () => `
 <p class="cli-output cyan-text">✦ Executive Profile:</p>
 <p class="cli-output"><strong>Chamindu Attanayaka</strong> — DevOps Engineer &amp; Platform Architect</p>
-<p class="cli-output">&bull; <strong>Current Role:</strong> DevOps Engineer at MillenniumIT ESP (Jan 2024 &ndash; Present)</p>
+<p class="cli-output">&bull; <strong>Current Role:</strong> DevOps Engineer &bull; Enterprise Cloud &amp; Platform Systems (Jan 2024 &ndash; Present)</p>
 <p class="cli-output">&bull; <strong>Experience:</strong> Nearly 4 years designing, automating, and operating AWS-based infrastructure, Kubernetes container fleets, Jenkins CI/CD, and full observability stacks.</p>
 <p class="cli-output">&bull; <strong>Education:</strong> Bachelor of Information and Communication Technology Honors (BICT), University of Kelaniya Sri Lanka (2019&ndash;2023).</p>
 <p class="cli-output">&bull; <strong>Specialization:</strong> AWS Architecture, EKS/AKS Containerization, Prometheus &amp; Grafana SRE Telemetry, Infrastructure as Code (Terraform), Zero-Downtime Releases.</p>
@@ -330,12 +350,12 @@ function initTerminalCli() {
 `,
     exp: () => `
 <p class="cli-output cyan-text">✦ Professional Experience &amp; Enterprise Client Engagements:</p>
-<p class="cli-output">&bull; <strong>DevOps Engineer @ MillenniumIT ESP</strong> (Jan 2024 &ndash; Present)</p>
+<p class="cli-output">&bull; <strong>DevOps Engineer</strong> (Jan 2024 &ndash; Present)</p>
 <p class="cli-output">&nbsp;&nbsp;&bull; <em>GIG Gulf Insurance:</em> EC2 kernel updates, NGINX patches, CAB governance, AWS CloudWatch/Lambda alerts, Jenkins CI/CD, WSO2 API/micro-integrations, Helm Prometheus/Grafana monitoring, SSL/TLS expiry automation.</p>
 <p class="cli-output">&nbsp;&nbsp;&bull; <em>Dialog Genie:</em> Multi-VPC network integration, Amazon EKS dedicated node groups, full Prometheus/Grafana/Alertmanager observability, Elastic Stack on EKS, HPA autoscaling, L2/L3 production SRE support.</p>
-<p class="cli-output">&bull; <strong>System Support Engineer @ MillenniumIT ESP</strong> (Jun 2023 &ndash; Jan 2024)</p>
+<p class="cli-output">&bull; <strong>System Support Engineer</strong> (Jun 2023 &ndash; Jan 2024)</p>
 <p class="cli-output">&bull; <strong>NOC Support @ Sri Lankan Airlines</strong> (Oct 2022 &ndash; Jun 2023)</p>
-<p class="cli-output">&nbsp;&nbsp;&bull; L1/L2 24/7 support for Sri Lanka's largest Cisco network: 10+ WAN sites, 200+ switches/routers, 100+ APs, 2000+ IP phones.</p>
+<p class="cli-output">&nbsp;&nbsp;&bull; L1/L2 24/7 support for Sri Lanka's largest Cisco network: 10+ WAN sites, 200+ switches/routers, 100+ APs, 2000+ VoIP endpoints.</p>
 `,
     status: () => `
 <p class="cli-output green-text">✦ Multi-Cloud Platform Telemetry &amp; Health Metrics:</p>
@@ -352,7 +372,6 @@ function initTerminalCli() {
 <p class="cli-output">&bull; LinkedIn: <a href="https://www.linkedin.com/in/chaminduattanayaka/" target="_blank" class="cyan-text">linkedin.com/in/chaminduattanayaka</a></p>
 <p class="cli-output">&bull; GitHub: <a href="https://github.com/ChaminduAttanayaka" target="_blank" class="cyan-text">github.com/ChaminduAttanayaka</a></p>
 <p class="cli-output">&bull; Credly: <a href="https://www.credly.com/users/chamindu-attanayaka" target="_blank" class="cyan-text">credly.com/users/chamindu-attanayaka</a></p>
-<p class="cli-output">&bull; Phone: <span class="cyan-text">+94 710951117</span></p>
 `
   };
 
@@ -566,5 +585,83 @@ function initButtonRipples() {
       }, 600);
     });
   });
+}
+
+/* ==========================================================================
+   13. MOBILE NAVIGATION DRAWER CONTROLLER
+   ========================================================================== */
+function initMobileNavigation() {
+  const toggleBtn = document.getElementById('mobile-nav-toggle');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const closeBtn = document.getElementById('mobile-drawer-close');
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+
+  if (!toggleBtn || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('is-open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  // Close when clicking any nav item
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // Close when clicking outside drawer inner
+  drawer.addEventListener('click', (e) => {
+    if (e.target === drawer) {
+      closeDrawer();
+    }
+  });
+
+  // Update active state in mobile drawer during scroll
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 120;
+    const sections = document.querySelectorAll('section[id]');
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if (scrollPos >= top && scrollPos < top + height) {
+        navItems.forEach((item) => {
+          if (item.getAttribute('href') === `#${id}`) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { passive: true });
 }
 
