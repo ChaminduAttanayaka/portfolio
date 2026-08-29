@@ -1,9 +1,12 @@
 /**
  * Chamindu Attanayaka — Portfolio Interactive Application Engine
- * Includes: Typewriter, Constellation Canvas, 3D Tilt, Scroll Observer, Counter Up, Interactive Terminal, & Project Filters.
+ * Includes: Lenis Smooth Scroll, Typewriter, Constellation Canvas, 3D Tilt, Scroll Observer, Counter Up, Interactive Terminal, & Project Filters.
  */
 
+let lenis = null;
+
 document.addEventListener('DOMContentLoaded', () => {
+  initLenisSmoothScroll();
   initSmoothScroll();
   initMobileNavigation();
   initBackToTop();
@@ -19,16 +22,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   0. SMOOTH SCROLLING ENGINE
+   0. LENIS SMOOTH SCROLLING ENGINE
    ========================================================================== */
-function smoothScrollTo(targetPosition, duration = 750) {
+function initLenisSmoothScroll() {
+  if (typeof Lenis !== 'undefined') {
+    try {
+      lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.05,
+        touchMultiplier: 1.4,
+        infinite: false,
+      });
+
+      window.lenisInstance = lenis;
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    } catch (err) {
+      console.warn('Lenis init fallback:', err);
+    }
+  }
+}
+
+function smoothScrollTo(target, offset = 0) {
+  if (lenis) {
+    lenis.scrollTo(target, {
+      offset: -offset,
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    return;
+  }
+
+  // Fallback animation if Lenis isn't available
+  let targetPosition = 0;
+  if (typeof target === 'number') {
+    targetPosition = target;
+  } else if (typeof target === 'string') {
+    const el = document.querySelector(target);
+    if (el) targetPosition = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - offset);
+  } else if (target instanceof HTMLElement) {
+    targetPosition = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - offset);
+  }
+
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
-  if (Math.abs(distance) < 5) return;
-  
-  let startTime = null;
+  if (Math.abs(distance) < 4) return;
 
-  // Custom ease-in-out quintic easing for fluid feel
+  let startTime = null;
   function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
@@ -36,12 +84,12 @@ function smoothScrollTo(targetPosition, duration = 750) {
   function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
+    const progress = Math.min(timeElapsed / 650, 1);
     const ease = easeInOutCubic(progress);
 
     window.scrollTo(0, startPosition + distance * ease);
 
-    if (timeElapsed < duration) {
+    if (timeElapsed < 650) {
       requestAnimationFrame(animation);
     }
   }
@@ -64,10 +112,8 @@ function initSmoothScroll() {
       
       const isMobile = window.innerWidth <= 768;
       const headerOffset = targetId === '#home' ? 0 : (isMobile ? 70 : 80);
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - headerOffset);
 
-      smoothScrollTo(offsetPosition, 650);
+      smoothScrollTo(targetElement, headerOffset);
 
       // Update URL hash smoothly without instant page jump
       if (history.pushState) {
@@ -630,6 +676,7 @@ function initMobileNavigation() {
     toggleBtn.classList.add('is-active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 
   function closeDrawer() {
@@ -638,6 +685,7 @@ function initMobileNavigation() {
     toggleBtn.classList.remove('is-active');
     toggleBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    if (lenis) lenis.start();
   }
 
   const handleToggle = (e) => {
@@ -672,10 +720,7 @@ function initMobileNavigation() {
           e.preventDefault();
           setTimeout(() => {
             const headerOffset = targetId === '#home' ? 0 : 70;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - headerOffset);
-
-            smoothScrollTo(offsetPosition, 650);
+            smoothScrollTo(targetElement, headerOffset);
 
             if (history.pushState) {
               history.pushState(null, null, targetId);
