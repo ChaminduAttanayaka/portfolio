@@ -1,359 +1,1250 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#02070d" />
-  <meta name="description" content="Chamindu Attanayaka — DevOps & Cloud Engineer. Cloud, Kubernetes, automation, observability and platform engineering." />
+  <meta name="theme-color" content="#050911" />
+  <meta name="description" content="Chamindu Attanayaka — Senior DevOps, Cloud & Platform Engineer. Specialist in AWS, Azure, Kubernetes, Terraform IaC, CI/CD automation, and observability." />
+  <meta property="og:title" content="Chamindu Attanayaka | Senior DevOps & Cloud Platform Engineer" />
+  <meta property="og:description" content="DevOps & Multi-Cloud Platform Engineer specializing in AWS, Azure, Kubernetes, Terraform, CI/CD automation, and SRE observability." />
 
-  <title>Chamindu Attanayaka | DevOps & Cloud Engineer</title>
+  <title>Chamindu Attanayaka | Senior DevOps &amp; Cloud Platform Engineer</title>
 
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  
+  <!-- Devicon for authentic official developer & cloud brand icons -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
 </head>
 
 <body>
-  <canvas id="network-canvas" aria-hidden="true"></canvas>
+  <!-- Ambient Atmospheric Glowing Orbs & Interactive Particle Canvas -->
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-orb orb-primary"></div>
+    <div class="ambient-orb orb-secondary"></div>
+    <div class="ambient-orb orb-tertiary"></div>
+    <canvas id="interactive-network-canvas" class="network-canvas"></canvas>
+  </div>
 
-  <div class="ambient ambient-a"></div>
-  <div class="ambient ambient-b"></div>
-  <div class="ambient ambient-c"></div>
+  <!-- Page Layout Wrapper -->
+  <div class="page-container">
 
-  <main class="page-shell">
+    <!-- ======================================================================= -->
+    <!-- 1. FLOATING GLASS PILL NAVBAR                                           -->
+    <!-- ======================================================================= -->
+    <header class="floating-header" id="main-header">
+      <div class="nav-pill-wrapper">
+        <a href="#home" class="nav-brand-unit" id="brand-identity" title="Chamindu Attanayaka - Home">
+          <div class="brand-avatar-ring">
+            <img src="assets/img/profile.jpg" alt="Chamindu Attanayaka" class="brand-avatar-img" id="nav-avatar-img" />
+            <span class="online-status-dot" title="Online & Available"></span>
+          </div>
+        </a>
 
-    <!-- HERO -->
-    <section class="panel hero-panel" id="home">
-      <div class="circuit circuit-left"></div>
-      <div class="circuit circuit-right"></div>
+        <nav class="nav-links-cluster" id="site-navigation" aria-label="Main Navigation">
+          <a href="#home" class="nav-pill-link active" id="link-home">Home</a>
+          <a href="#overview" class="nav-pill-link" id="link-overview">Overview</a>
+          <a href="#architecture" class="nav-pill-link" id="link-architecture">Stack</a>
+          <a href="#repositories" class="nav-pill-link" id="link-repositories">Repositories</a>
+          <a href="#credentials" class="nav-pill-link" id="link-credentials">Certifications</a>
+          <a href="#contact" class="nav-pill-link" id="link-contact">Contact</a>
+        </nav>
 
-      <div class="hero-copy">
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          CLOUD SYSTEM ONLINE
-        </div>
-
-        <h1>
-          <span class="first-name">CHAMINDU</span>
-          <span class="last-name">ATTANAYAKA</span>
-        </h1>
-
-        <p class="role">DEVOPS <span>•</span> CLOUD <span>•</span> PLATFORM ENGINEERING</p>
-
-        <div class="scan-line"><span></span></div>
-
-        <p class="tagline">BUILD • AUTOMATE • SCALE • OBSERVE</p>
-
-        <div class="hero-pills">
-          <span class="pill"><i class="dot green"></i>AWS / AZURE</span>
-          <span class="pill"><i class="dot blue"></i>KUBERNETES</span>
-          <span class="pill"><i class="dot violet"></i>AUTOMATION</span>
-        </div>
-
-        <div class="terminal-mini">
-          <div><span class="prompt">$</span> engineer.status</div>
-          <div class="terminal-value">"Designing resilient cloud platforms"</div>
-          <div><span class="prompt">$</span> current.focus</div>
-          <div class="terminal-value">cloud_native • automation • reliability <span class="cursor"></span></div>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="https://www.linkedin.com/in/chaminduattanayaka/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/ChaminduAttanayaka?tab=repositories" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="https://www.credly.com/users/chamindu-attanayaka" target="_blank" rel="noreferrer">Credly</a>
-          <a class="btn" href="mailto:chamindu.m.a@gmail.com">Email</a>
+        <div class="nav-action-group">
+          <a href="mailto:chamindu.m.a@gmail.com" class="btn-talk" id="header-contact-btn">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Let's Talk</span>
+          </a>
         </div>
       </div>
+    </header>
 
-      <div class="hero-visual">
-        <div class="cloud-stage">
-          <div class="cloud-glow"></div>
+    <!-- ======================================================================= -->
+    <!-- 2. MODERN HERO ARCHITECTURAL STAGE WITH DYNAMIC ANIMATIONS              -->
+    <!-- ======================================================================= -->
+    <section class="hero-stage" id="home" aria-label="Hero Section">
+      <div class="content-bound">
+        <div class="hero-split-layout">
 
-          <div class="cloud">
-            <div class="cloud-bubble b1"></div>
-            <div class="cloud-bubble b2"></div>
-            <div class="cloud-bubble b3"></div>
-            <div class="cloud-body"></div>
+          <!-- Left: Editorial Pitch & Dynamic Typewriter -->
+          <div class="hero-editorial" id="hero-editorial-panel">
+            
+            <div class="availability-badge animate-fade-in" id="hero-availability">
+              <span class="pulse-beacon"></span>
+              <span class="avail-text">Open for Senior DevOps &amp; Cloud Platform Roles</span>
+            </div>
 
-            <div class="aws-mark">
-              <strong>aws</strong>
-              <svg viewBox="0 0 92 28" aria-hidden="true">
-                <path d="M8 8c19 14 45 15 70 2" fill="none" stroke="#ff9900" stroke-width="4" stroke-linecap="round"/>
-                <path d="M69 5l12 4-8 10" fill="none" stroke="#ff9900" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+            <h1 class="hero-headline animate-fade-in" id="hero-main-title">
+              <span>Hi, I'm <span class="gradient-name">Chamindu</span></span>
+            </h1>
+            <h3 class="hero-headline animate-fade-in" id="hero-typewriter-heading">
+               <span class="typewriter-line-wrap">
+                  <span class="typewriter-prefix">I am a</span>
+                  <span class="typewriter-text" id="typewriter-output"></span>
+                  <span class="typewriter-cursor">|</span>
+                </span>
+            </h3>
+            <p class="hero-lead-paragraph animate-fade-in" id="hero-summary-text"> 
+              DevOps Engineer experienced in AWS, Kubernetes, CI/CD, and cloud-native infrastructure, with expertise in Jenkins, Terraform, Prometheus, and Grafana. Focused on automation, scalability, reliability, and secure delivery while driving DevOps best practices across teams. Currently expanding into blockchain, DeFi, and Web3 infrastructure to bridge cloud-native engineering with decentralized platforms.
+            </p>
+
+            <!-- Primary Action Cluster with Hover Animations -->
+            <div class="hero-actions-cluster animate-fade-in" id="hero-actions-group">
+              <a href="#repositories" class="btn-primary-action btn-ripple" id="btn-explore-repos">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>Explore Projects</span>
+              </a>
+
+              <a href="https://www.credly.com/users/chamindu-attanayaka" target="_blank" rel="noreferrer" class="btn-secondary-action btn-glow" id="btn-credly-transcript">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <span>Credly Transcript</span>
+              </a>
+
+              <a href="https://github.com/ChaminduAttanayaka?tab=repositories" target="_blank" rel="noreferrer" class="btn-icon-link" title="GitHub Repositories" id="btn-github-profile">
+                <i class="devicon-github-original"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/in/chaminduattanayaka/" target="_blank" rel="noreferrer" class="btn-icon-link" title="LinkedIn Profile" id="btn-linkedin-profile">
+                <i class="devicon-linkedin-plain"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Executive 3D Floating Cyber Cloud ID Card -->
+          <div class="hero-visual-card-wrap" id="hero-portrait-stage">
+            <div class="tilt-card-wrapper" data-tilt>
+              
+              <!-- Floating Ambient Tech Orbit Badges -->
+              <div class="orbit-icon-badge orbit-aws" title="AWS Solutions Architect Pro">
+                <i class="devicon-amazonwebservices-plain colored"></i>
+              </div>
+              <div class="orbit-icon-badge orbit-k8s" title="Kubernetes Cluster Orchestration">
+                <i class="devicon-kubernetes-plain colored"></i>
+              </div>
+              <div class="orbit-icon-badge orbit-terraform" title="Terraform Infrastructure as Code">
+                <i class="devicon-terraform-plain colored"></i>
+              </div>
+              <div class="orbit-icon-badge orbit-docker" title="Docker Containerization">
+                <i class="devicon-docker-plain colored"></i>
+              </div>
+
+              <div class="executive-portrait-card" id="devops-id-card">
+                <!-- Card Terminal Header Bar -->
+                <div class="id-card-topbar">
+                  <div class="id-card-dots">
+                    <span class="id-dot id-dot-red"></span>
+                    <span class="id-dot id-dot-yellow"></span>
+                    <span class="id-dot id-dot-green"></span>
+                  </div>
+                  <span class="id-card-sys-tag">SYS // DEVOPS-ARCHITECT</span>
+                  <span class="id-card-status"><span class="id-pulse-dot"></span>ACTIVE</span>
+                </div>
+
+                <!-- Sleek Avatar Center Stage -->
+                <div class="id-avatar-showcase">
+                  <div class="avatar-orbit-ring"></div>
+                  <div class="avatar-ambient-glow"></div>
+                  <div class="avatar-frame">
+                    <img src="assets/img/profile.jpg" alt="Chamindu Attanayaka" class="portrait-image-element" id="hero-portrait-img" />
+                    <span class="avatar-verified-badge" title="AWS Solutions Architect Pro &amp; Terraform Certified">✓</span>
+                  </div>
+                  <div class="avatar-cert-chip">
+                    <i class="devicon-amazonwebservices-plain colored"></i>
+                    <span>AWS SA Professional</span>
+                  </div>
+                </div>
+
+                <!-- Info Section -->
+                <div class="portrait-card-info">
+                  <div class="id-engineer-meta text-center">
+                    <h3 class="portrait-engineer-name">Chamindu Attanayaka</h3>
+                    <p class="portrait-engineer-title">DevOps Engineer &bull; MillenniumIT ESP</p>
+                  </div>
+
+                  <div class="id-telemetry-grid">
+                    <div class="id-stat-box">
+                      <span class="id-stat-num">4+</span>
+                      <span class="id-stat-lbl">Years Exp</span>
+                    </div>
+                    <div class="id-stat-box">
+                      <span class="id-stat-num">12+</span>
+                      <span class="id-stat-lbl">Credly Certs</span>
+                    </div>
+                    <div class="id-stat-box">
+                      <span class="id-stat-num">9</span>
+                      <span class="id-stat-lbl">OSS Repos</span>
+                    </div>
+                  </div>
+
+                  <div class="tech-pills-row justify-center">
+                    <span class="pill-badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+                    <span class="pill-badge"><i class="devicon-kubernetes-plain colored"></i> K8s</span>
+                    <span class="pill-badge"><i class="devicon-terraform-plain colored"></i> Terraform</span>
+                    <span class="pill-badge"><i class="devicon-azure-plain colored"></i> Azure</span>
+                    <span class="pill-badge"><i class="devicon-jenkins-line colored"></i> CI/CD</span>
+                  </div>
+
+                  <div class="portrait-footer-meta">
+                    <div class="location-beacon justify-center">
+                      <span class="radar-beacon-dot"></span>
+                      <span>Colombo, Sri Lanka &bull; Available Worldwide</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
           </div>
 
-          <div class="cloud-line vertical"></div>
-          <div class="cloud-line horizontal"></div>
+        </div>
+      </div>
+    </section>
 
-          <div class="orbit-node node-k8s">
-            <div class="node-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes" />
+    <!-- ======================================================================= -->
+    <!-- 2.5 INTERACTIVE CLOUD TERMINAL PLAYGROUND (PROFILE CLI)                 -->
+    <!-- ======================================================================= -->
+    <section class="section-block terminal-stage reveal-on-scroll" id="terminal-section" aria-label="Interactive Terminal Console">
+      <div class="content-bound">
+        <!-- Interactive Cloud Terminal Playground -->
+        <div class="interactive-terminal-card" id="cli-console">
+          <div class="cli-topbar">
+            <div class="cli-traffic-lights">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
             </div>
-            <small>KUBERNETES</small>
+            <span class="cli-title"><i class="devicon-linux-plain colored"></i> chamindu@cloud-platform: ~ (zsh)</span>
+            <span class="cli-status-indicator"><span class="cli-pulse"></span>ONLINE • 99.99% SLO</span>
           </div>
 
-          <div class="orbit-node node-tf">
-            <div class="node-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" />
-            </div>
-            <small>TERRAFORM</small>
+          <div class="cli-body-stream" id="terminal-stream">
+            <p class="cli-line"><span class="cli-prompt">chamindu@cloud:~$</span> <span class="cli-cmd">init-session --profile ChaminduAttanayaka</span></p>
+            <p class="cli-output cyan-text">✦ <strong>Chamindu Attanayaka</strong> | DevOps Engineer @ MillenniumIT ESP</p>
+            <p class="cli-output green-text">✓ AWS Solutions Architect Pro • Kubernetes &amp; Observability Specialist</p>
+            <p class="cli-output">✓ Infrastructure: AWS Multi-VPC, Amazon EKS Fargate/Nodes, Azure AKS, Terraform IaC</p>
+            <p class="cli-output">✓ Open-Source: 9 Production Repositories Synced (CI/CD, Monitoring, K8s HPA/PDB)</p>
+            <p class="cli-output">✓ Credentials: 12+ Verified Credly Badges (AWS SAP/SAA/SOA, AZ-104, Terraform, CCNA)</p>
+            <p class="cli-output" style="color: #94a3b8; font-size: 0.8rem; margin-top: 4px;">💡 Tip: Type <span class="cli-cmd-highlight">help</span> or click the buttons below to explore.</p>
+            <p class="cli-line cli-input-row">
+              <span class="cli-prompt">chamindu@cloud:~$</span>
+              <input type="text" id="terminal-input" class="terminal-text-input" placeholder="Type 'whoami', 'skills', 'repos', 'certs', 'exp', 'status'..." autocomplete="off" spellcheck="false" />
+            </p>
           </div>
 
-          <div class="orbit-node node-observe">
-            <div class="node-icon chart-icon">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <polyline points="7,34 17,24 25,28 34,14 42,20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <small>OBSERVE</small>
-          </div>
-
-          <div class="data-packet p1"></div>
-          <div class="data-packet p2"></div>
-          <div class="data-packet p3"></div>
-
-          <div class="terminal-card">
-            <div class="terminal-head">
-              <span class="mac red"></span>
-              <span class="mac yellow"></span>
-              <span class="mac green"></span>
-              <span class="terminal-title">cloud-terminal</span>
-            </div>
-            <div class="terminal-body">
-              <div><span class="cyan">chamindu@cloud:~$</span> kubectl get platform</div>
-              <div class="green-t">STATUS READY RELIABILITY</div>
-              <div>ONLINE&nbsp;&nbsp;100%&nbsp;&nbsp;OPTIMIZED</div>
-              <div class="typing-line"><span></span></div>
-            </div>
+          <div class="cli-quick-commands">
+            <span class="quick-label">Interactive CLI:</span>
+            <button class="btn-quick-cmd" data-cmd="whoami">👤 whoami</button>
+            <button class="btn-quick-cmd" data-cmd="skills"><i class="devicon-docker-plain colored"></i> skills</button>
+            <button class="btn-quick-cmd" data-cmd="repos"><i class="devicon-github-original"></i> repos</button>
+            <button class="btn-quick-cmd" data-cmd="certs"><i class="devicon-amazonwebservices-plain colored"></i> certs</button>
+            <button class="btn-quick-cmd" data-cmd="exp">💼 experience</button>
+            <button class="btn-quick-cmd" data-cmd="status"><i class="devicon-kubernetes-plain colored"></i> status</button>
+            <button class="btn-quick-cmd" data-cmd="contact">📬 contact</button>
+            <button class="btn-quick-cmd" data-cmd="clear">🧹 clear</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TECHNOLOGY MATRIX -->
-    <section class="panel section-panel reveal" id="stack">
-      <div class="section-heading">
-        <div>
-          <span class="section-kicker">⚡ TECHNOLOGY MATRIX</span>
-          <p>CLOUD-NATIVE ENGINEERING SYSTEMS</p>
+    <!-- ======================================================================= -->
+    <!-- 3. PLATFORM CAPABILITIES & PHILOSOPHY (BENTO GRID)                      -->
+    <!-- ======================================================================= -->
+    <section class="section-block reveal-on-scroll" id="overview" aria-label="Platform Architecture Overview">
+      <div class="content-bound">
+        <div class="section-title-wrap">
+          <span class="eyebrow-accent">OVERVIEW</span>
+          <h2 class="section-headline">Architecting Multi-Cloud Resiliency</h2>
+          <p class="section-subtext">Delivering enterprise reliability, automated infrastructure pipelines, and developer enablement.</p>
         </div>
-        <div class="mini-status">
-          <i class="dot green"></i>
-          PRODUCTION READY
-        </div>
-      </div>
 
-      <div class="section-sweep"><span></span></div>
+        <div class="overview-bento-grid">
+          
+          <!-- Large Philosophy Card -->
+          <div class="bento-tile bento-span-2 glow-hover-card">
+            <div class="tile-header">
+              <span class="tile-tag">ENGINEERING PHILOSOPHY</span>
+            </div>
+            <h3 class="tile-title">Declarative, Secure &amp; Self-Healing Platforms</h3>
+            <p class="tile-text">
+              I bridge modern software engineering and multi-cloud infrastructure operations. With over 5 years of hands-on experience, I design declarative, immutable, and fully observable cloud environments.
+            </p>
+            <p class="tile-text">
+              Whether provisioning production-grade <strong>Terraform IaC</strong> modules across AWS and Azure, managing container fleets on <strong>Amazon EKS &amp; Azure AKS</strong>, or automating zero-trust CI/CD delivery pipelines, my focus is rooted in high security standards and 99.99% availability.
+            </p>
 
-      <div class="matrix-grid">
-        <article class="matrix-card teal">
-          <h3>CLOUD + INFRASTRUCTURE</h3>
-          <div class="logo-grid">
-            <div class="logo-orbit" data-name="AWS">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
-            </div>
-            <div class="logo-orbit" data-name="Azure">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure" />
-            </div>
-            <div class="logo-orbit" data-name="Terraform">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" />
+            <div class="philosophy-tags-grid">
+              <div class="phi-node">
+                <div class="phi-icon-box"><i class="devicon-terraform-plain colored"></i></div>
+                <span class="phi-text">Immutable Infrastructure as Code</span>
+              </div>
+              <div class="phi-node">
+                <div class="phi-icon-box"><i class="devicon-kubernetes-plain colored"></i></div>
+                <span class="phi-text">Production Kubernetes Clusters</span>
+              </div>
+              <div class="phi-node">
+                <div class="phi-icon-box"><i class="devicon-argocd-plain colored"></i></div>
+                <span class="phi-text">GitOps &amp; Zero-Downtime Releases</span>
+              </div>
+              <div class="phi-node">
+                <div class="phi-icon-box"><i class="devicon-grafana-plain colored"></i></div>
+                <span class="phi-text">360° Distributed Telemetry &amp; SRE</span>
+              </div>
             </div>
           </div>
-          <strong>AWS • Azure • Terraform</strong>
-          <p>Cloud architecture • IaC • scalable foundations</p>
-        </article>
 
-        <article class="matrix-card blue">
-          <h3>CONTAINERS + ORCHESTRATION</h3>
-          <div class="logo-grid">
-            <div class="logo-orbit" data-name="Kubernetes">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes" />
+          <!-- Pillar 1: Infrastructure -->
+          <div class="bento-tile glow-hover-card">
+            <div class="tile-icon-box cyan-box">
+              <i class="devicon-terraform-plain colored"></i>
             </div>
-            <div class="logo-orbit" data-name="Docker">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
-            </div>
-            <div class="logo-orbit" data-name="Helm">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" alt="Helm" />
-            </div>
+            <h4 class="tile-subheading">Modular Infrastructure as Code</h4>
+            <p class="tile-description">
+              Reusable Terraform and CloudFormation modules with remote state locking, security policy enforcement, and compliance scanning.
+            </p>
           </div>
-          <strong>Kubernetes • Docker • Helm</strong>
-          <p>Orchestration • containers • production workloads</p>
-        </article>
 
-        <article class="matrix-card gold">
-          <h3>CI/CD + AUTOMATION</h3>
-          <div class="logo-grid">
-            <div class="logo-orbit" data-name="Jenkins">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins" />
+          <!-- Pillar 2: Kubernetes -->
+          <div class="bento-tile glow-hover-card">
+            <div class="tile-icon-box blue-box">
+              <i class="devicon-kubernetes-plain colored"></i>
             </div>
-            <div class="logo-orbit" data-name="Git">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+            <h4 class="tile-subheading">Kubernetes &amp; Cloud Containers</h4>
+            <p class="tile-description">
+              Amazon EKS &amp; Azure AKS lifecycle management, custom Helm charts, ingress controllers, service meshes, and RBAC hardening.
+            </p>
+          </div>
+
+          <!-- Pillar 3: Telemetry -->
+          <div class="bento-tile glow-hover-card">
+            <div class="tile-icon-box emerald-box">
+              <i class="devicon-prometheus-original colored"></i>
             </div>
-            <div class="logo-orbit" data-name="Python">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
-            </div>
+            <h4 class="tile-subheading">Full-Stack Observability &amp; SRE</h4>
+            <p class="tile-description">
+              Distributed Prometheus metrics, Grafana dashboards, ELK log aggregation, SLI/SLO tracking, and proactive incident alerts.
+            </p>
           </div>
-          <strong>Jenkins • Git • Python</strong>
-          <p>Pipelines • scripting • repeatable delivery</p>
-        </article>
 
-        <article class="matrix-card violet">
-          <h3>OBSERVABILITY + MONITORING</h3>
-          <div class="logo-grid">
-            <div class="logo-orbit" data-name="Prometheus">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" />
-            </div>
-            <div class="logo-orbit" data-name="Grafana">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" />
-            </div>
-            <div class="logo-orbit" data-name="Elastic">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" />
-            </div>
-          </div>
-          <strong>Prometheus • Grafana • Elastic</strong>
-          <p>Metrics • dashboards • logs • alerting</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="panel section-panel reveal" id="projects">
-      <div class="section-heading">
-        <div>
-          <span class="section-kicker">🚀 ENGINEERING HIGHLIGHTS</span>
-          <p>SELECTED AUTOMATION • PLATFORM • OBSERVABILITY WORK</p>
-        </div>
-        <div class="mini-status blue-status">
-          <i class="dot blue"></i>
-          ACTIVE PIPELINES
-        </div>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-icon cube">
-            <span></span>
-          </div>
-          <h3>ECR Automation</h3>
-          <p>Jenkins • Docker • AWS</p>
-          <div class="progress"><i style="--value:82%"></i></div>
-          <small>AUTOMATED PUBLISHING</small>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon target">
-            <span></span>
-          </div>
-          <h3>EOL Intelligence</h3>
-          <p>Python • Lambda • AWS</p>
-          <div class="pulse-ring"></div>
-          <small>VERSION RISK DETECTION</small>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon restart">
-            <span></span>
-          </div>
-          <h3>K8s Restart Pipeline</h3>
-          <p>Jenkins • Kubernetes</p>
-          <div class="spinner"></div>
-          <small>CONTROLLED RESTARTS</small>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon monitor">
-            <svg viewBox="0 0 52 42">
-              <polyline points="6,31 16,20 25,25 35,10 46,17" fill="none" stroke="currentColor" stroke-width="3" />
-            </svg>
-            <i class="monitor-dot"></i>
-          </div>
-          <h3>Cloud Monitoring</h3>
-          <p>Prometheus • Grafana</p>
-          <small>REAL-TIME OBSERVABILITY</small>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon cloud-project">
-            <span></span>
-          </div>
-          <h3>EKS Platform</h3>
-          <p>EKS • Terraform • IaC</p>
-          <div class="packet-row"><i></i><i></i><i></i><i></i></div>
-          <small>PLATFORM ENGINEERING</small>
-        </article>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="panel section-panel reveal" id="certifications">
-      <div class="section-heading">
-        <div>
-          <span class="section-kicker">🏆 CERTIFICATIONS</span>
-          <p>CLOUD • PLATFORM • INFRASTRUCTURE</p>
-        </div>
-        <div class="mini-status cert-status">
-          <i class="dot violet"></i>
-          VERIFIED TRACK
-        </div>
-      </div>
-
-      <div class="cert-grid">
-        <div class="cert-badge aws-cert">
-          <span class="cert-top">AWS</span>
-          <strong>SOLUTIONS ARCHITECT</strong>
-          <small>PROFESSIONAL</small>
-        </div>
-
-        <div class="cert-badge aws-assoc">
-          <span class="cert-top">AWS</span>
-          <strong>SOLUTIONS ARCHITECT</strong>
-          <small>ASSOCIATE</small>
-        </div>
-
-        <div class="cert-badge aws-assoc">
-          <span class="cert-top">AWS</span>
-          <strong>SYSOPS ADMIN</strong>
-          <small>ASSOCIATE</small>
-        </div>
-
-        <div class="cert-badge azure-cert">
-          <span class="cert-top">AZ</span>
-          <strong>AZURE ADMIN</strong>
-          <small>AZ-104</small>
-        </div>
-
-        <div class="cert-badge tf-cert">
-          <span class="cert-top">TF</span>
-          <strong>TERRAFORM</strong>
-          <small>ASSOCIATE</small>
-        </div>
-
-        <div class="cert-badge gcp-cert">
-          <span class="cert-top">GCP</span>
-          <strong>GOOGLE CLOUD</strong>
-          <small>FUNDAMENTALS</small>
         </div>
       </div>
     </section>
 
-    <!-- CONNECT -->
-    <section class="panel connect-panel reveal" id="connect">
-      <h2>LET'S CONNECT</h2>
-      <p>Cloud • Automation • Platform Engineering • Reliability</p>
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- 4. CORE TECH STACK & INTERACTIVE ARCHITECTURE                           -->
+    <!-- ======================================================================= -->
+    <section class="section-block reveal-on-scroll" id="architecture" aria-label="Technical Matrix">
+      <div class="content-bound">
+        
+        <!-- Technology Matrix Header Bar -->
+        <div class="tech-matrix-header-bar">
+          <div class="tech-matrix-title-group">
+            <div class="tech-matrix-title-row">
+              <span class="matrix-lightning-icon">⚡</span>
+              <h2 class="matrix-main-title">TECHNOLOGY MATRIX</h2>
+            </div>
+            <p class="matrix-subtitle">CLOUD-NATIVE ENGINEERING SYSTEMS</p>
+          </div>
+          <div class="matrix-status-pill">
+            <span class="status-pulse-dot"></span>
+            <span class="status-text">PRODUCTION READY</span>
+          </div>
+        </div>
 
-      <div class="connect-links">
-        <a href="https://www.linkedin.com/in/chaminduattanayaka/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/ChaminduAttanayaka" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.credly.com/users/chamindu-attanayaka" target="_blank" rel="noreferrer">Credly</a>
-        <a href="mailto:chamindu.m.a@gmail.com">Email</a>
+        <!-- 6 Core Domain Cards Matrix -->
+        <div class="matrix-cards-grid">
+
+          <!-- Card 1: Cloud & Infrastructure -->
+          <div class="matrix-card glow-hover-card" id="card-tech-cloud">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-cloud">
+              <span class="cat-dot"></span> CLOUD + INFRASTRUCTURE
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+              
+              <!-- Pod 1: AWS -->
+              <div class="tech-orb-unit orb-aws float-1" title="Amazon Web Services">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: Azure -->
+              <div class="tech-orb-unit orb-azure float-2" title="Microsoft Azure">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Terraform -->
+              <div class="tech-orb-unit orb-tf float-3" title="HashiCorp Terraform">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">AWS • Azure • Terraform</h3>
+              <p class="matrix-card-summary">Multi-VPC, EKS, Lambda, S3, RDS, EFS • Azure AKS • Modular IaC</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Containers & Orchestration -->
+          <div class="matrix-card glow-hover-card" id="card-tech-containers">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-containers">
+              <span class="cat-dot"></span> CONTAINERS + ORCHESTRATION
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+
+              <!-- Pod 1: Kubernetes -->
+              <div class="tech-orb-unit orb-k8s float-1" title="Kubernetes">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: Docker -->
+              <div class="tech-orb-unit orb-docker float-2" title="Docker">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Helm -->
+              <div class="tech-orb-unit orb-helm float-3" title="Helm">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" alt="Helm" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">Kubernetes • Docker • Helm</h3>
+              <p class="matrix-card-summary">EKS &amp; AKS fleets • HPA &amp; PDB autoscaling • Fargate serverless</p>
+            </div>
+          </div>
+
+          <!-- Card 3: CI/CD & Automation -->
+          <div class="matrix-card glow-hover-card" id="card-tech-cicd">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-cicd">
+              <span class="cat-dot"></span> CI/CD + AUTOMATION
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+
+              <!-- Pod 1: Jenkins -->
+              <div class="tech-orb-unit orb-jenkins float-1" title="Jenkins">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: Git -->
+              <div class="tech-orb-unit orb-git float-2" title="Git">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Python -->
+              <div class="tech-orb-unit orb-python float-3" title="Python">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">Jenkins • Git • Python</h3>
+              <p class="matrix-card-summary">Declarative CI/CD • Lambda Boto3 automation • ECR release pipelines</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Observability & Monitoring -->
+          <div class="matrix-card glow-hover-card" id="card-tech-observability">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-obs">
+              <span class="cat-dot"></span> OBSERVABILITY + MONITORING
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+
+              <!-- Pod 1: Prometheus -->
+              <div class="tech-orb-unit orb-prom float-1" title="Prometheus">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: Grafana -->
+              <div class="tech-orb-unit orb-grafana float-2" title="Grafana">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Elasticsearch -->
+              <div class="tech-orb-unit orb-elastic float-3" title="Elasticsearch">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">Prometheus • Grafana • Elastic</h3>
+              <p class="matrix-card-summary">Alertmanager • Kibana logs • CloudWatch &amp; Node Exporter • SRE alerts</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Enterprise Integration & Middleware -->
+          <div class="matrix-card glow-hover-card" id="card-tech-enterprise">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-enterprise">
+              <span class="cat-dot"></span> ENTERPRISE + MIDDLEWARE
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+
+              <!-- Pod 1: WSO2 -->
+              <div class="tech-orb-unit orb-wso2 float-1" title="WSO2 API Manager & Micro-Integrator">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="/assets/img/wso2.svg" alt="WSO2" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: NGINX -->
+              <div class="tech-orb-unit orb-nginx float-2" title="NGINX Reverse Proxy & Web Server">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="NGINX" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Nexus -->
+              <div class="tech-orb-unit orb-nexus float-3" title="Sonatype Nexus Repository">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="/assets/img/nexus.svg" alt="Sonatype Nexus" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">WSO2 • NGINX • Nexus</h3>
+              <p class="matrix-card-summary">API gateway &amp; micro-integration • NGINX proxy • artifact management</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Networking & Virtualization -->
+          <div class="matrix-card glow-hover-card" id="card-tech-network">
+            <div class="matrix-card-glow-bg"></div>
+            <div class="matrix-card-top cat-network">
+              <span class="cat-dot"></span> NETWORKING + VIRTUALIZATION
+            </div>
+            
+            <div class="matrix-orbs-container">
+              <div class="matrix-energy-line"></div>
+
+              <!-- Pod 1: Cisco -->
+              <div class="tech-orb-unit orb-cisco float-1" title="Cisco CCNA Networking">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="/assets/img/cisco.svg" alt="Cisco" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse"></span>
+              </div>
+
+              <!-- Pod 2: VMware -->
+              <div class="tech-orb-unit orb-vmware float-2" title="VMware ESXi 8 & vCenter 8.0">
+                <div class="orb-dashed-halo halo-ccw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="/assets/img/vmware.svg" alt="VMware" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="tech-orb-connector">
+                <span class="connector-pulse pulse-delay"></span>
+              </div>
+
+              <!-- Pod 3: Linux -->
+              <div class="tech-orb-unit orb-linux float-3" title="Linux OS & Shell Administration">
+                <div class="orb-dashed-halo halo-cw"></div>
+                <div class="orb-pulse-glow"></div>
+                <div class="orb-icon-inner">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="tech-orb-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-card-body">
+              <h3 class="matrix-card-heading">Cisco • VMware • Linux</h3>
+              <p class="matrix-card-summary">Cisco switches &amp; ASA • VMware ESXi/vCenter • OpManager &amp; Cacti</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-
-      <div class="footer-beam"><span></span></div>
-      <small>BUILD → AUTOMATE → OBSERVE → IMPROVE</small>
     </section>
-  </main>
 
-  <script src="assets/js/app.js"></script>
+    <!-- ======================================================================= -->
+    <!-- 5. FEATURED REPOSITORIES & PROJECTS (ANIMATED FILTER)                   -->
+    <!-- ======================================================================= -->
+    <section class="section-block reveal-on-scroll" id="repositories" aria-label="Featured GitHub Projects">
+      <div class="content-bound">
+        <div class="section-title-wrap">
+          <span class="eyebrow-accent">OPEN SOURCE</span>
+          <h2 class="section-headline">Featured Repositories &amp; Blueprints</h2>
+          <p class="section-subtitle">Real-world infrastructure codebases, automation scripts, and deployment configurations.</p>
+        </div>
+
+        <!-- Filter Pill Chips with Smooth Animation -->
+        <div class="filter-pill-bar" id="repo-filter-chips">
+          <button class="filter-pill-btn active" data-filter="all" id="filter-all-btn">All Repositories (9)</button>
+          <button class="filter-pill-btn" data-filter="cicd" id="filter-cicd-btn"><i class="devicon-jenkins-line colored"></i> CI/CD &amp; Pipelines</button>
+          <button class="filter-pill-btn" data-filter="kubernetes" id="filter-k8s-btn"><i class="devicon-kubernetes-plain colored"></i> Kubernetes &amp; EKS/AKS</button>
+          <button class="filter-pill-btn" data-filter="monitoring" id="filter-mon-btn"><i class="devicon-grafana-plain colored"></i> Observability &amp; SRE</button>
+          <button class="filter-pill-btn" data-filter="cloud" id="filter-cloud-btn"><i class="devicon-amazonwebservices-plain colored"></i> AWS &amp; Azure Cloud</button>
+          <button class="filter-pill-btn" data-filter="terraform" id="filter-tf-btn"><i class="devicon-terraform-plain colored"></i> Terraform &amp; IaC</button>
+        </div>
+
+        <!-- Repositories Grid -->
+        <div class="repo-cards-grid" id="repositories-grid">
+
+          <!-- 1. jmeter-aws-load-testing-platform -->
+          <div class="repo-card glow-hover-card" data-category="terraform cloud cicd" id="repo-jmeter-aws">
+            <div class="repo-card-top">
+              <div class="repo-type-icon tf-icon">
+                <i class="devicon-terraform-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; Load Testing &amp; IaC</span>
+            </div>
+            <h3 class="repo-heading">jmeter-aws-load-testing-platform</h3>
+            <p class="repo-paragraph">
+              Automated API performance testing platform using JMeter, Terraform, Jenkins, Docker, EC2, SSM, S3 and ECR for distributed multi-region stress tests.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-terraform-plain colored"></i> Terraform</span>
+              <span class="rtag"><i class="devicon-amazonwebservices-plain colored"></i> AWS EC2/SSM</span>
+              <span class="rtag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="rtag"><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span class="rtag">JMeter</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/jmeter-aws-load-testing-platform" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Observability-on-AWS-EKS-Fargate -->
+          <div class="repo-card glow-hover-card" data-category="kubernetes cloud monitoring" id="repo-obs-eks-fargate">
+            <div class="repo-card-top">
+              <div class="repo-type-icon k8s-icon">
+                <i class="devicon-kubernetes-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; EKS Observability</span>
+            </div>
+            <h3 class="repo-heading">Observability-on-AWS-EKS-Fargate</h3>
+            <p class="repo-paragraph">
+              Prometheus and Grafana observability stack for AWS EKS Fargate with Helm, Jenkins, EFS persistence, and reusable alerting configuration.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-kubernetes-plain colored"></i> AWS EKS</span>
+              <span class="rtag"><i class="devicon-amazonwebservices-plain colored"></i> AWS Fargate</span>
+              <span class="rtag"><i class="devicon-prometheus-original colored"></i> Prometheus</span>
+              <span class="rtag"><i class="devicon-grafana-plain colored"></i> Grafana</span>
+              <span class="rtag"><i class="devicon-helm-original colored"></i> Helm</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/Observability-on-AWS-EKS-Fargate" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. observability-azure-node -->
+          <div class="repo-card glow-hover-card" data-category="kubernetes cloud monitoring" id="repo-obs-azure-node">
+            <div class="repo-card-top">
+              <div class="repo-type-icon az-icon">
+                <i class="devicon-azure-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; AKS Monitoring</span>
+            </div>
+            <h3 class="repo-heading">observability-azure-node</h3>
+            <p class="repo-paragraph">
+              Prometheus and Grafana observability stack for Azure AKS worker nodes with Helm, Jenkins, persistent storage, and reusable alerting rules.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-azure-plain colored"></i> Azure AKS</span>
+              <span class="rtag"><i class="devicon-prometheus-original colored"></i> Prometheus</span>
+              <span class="rtag"><i class="devicon-grafana-plain colored"></i> Grafana</span>
+              <span class="rtag"><i class="devicon-helm-original colored"></i> Helm</span>
+              <span class="rtag">SRE</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/observability-azure-node" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. grafana-backup-restore-toolkit -->
+          <div class="repo-card glow-hover-card" data-category="monitoring cicd" id="repo-grafana-backup">
+            <div class="repo-card-top">
+              <div class="repo-type-icon graf-icon">
+                <i class="devicon-grafana-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; SRE Automation</span>
+            </div>
+            <h3 class="repo-heading">grafana-backup-restore-toolkit</h3>
+            <p class="repo-paragraph">
+              Bash toolkit for safely backing up and restoring Grafana dashboards, folders, datasources, alerting configuration, and users via the Grafana HTTP API.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-bash-plain colored"></i> Bash / Shell</span>
+              <span class="rtag"><i class="devicon-grafana-plain colored"></i> Grafana API</span>
+              <span class="rtag">Backup &amp; Restore</span>
+              <span class="rtag">Disaster Recovery</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/grafana-backup-restore-toolkit" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. jenkins-kubernetes-hpa-manager -->
+          <div class="repo-card glow-hover-card" data-category="cicd kubernetes cloud" id="repo-jenkins-hpa">
+            <div class="repo-card-top">
+              <div class="repo-type-icon jenkins-icon">
+                <i class="devicon-jenkins-line colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; Autoscaling</span>
+            </div>
+            <h3 class="repo-heading">jenkins-kubernetes-hpa-manager</h3>
+            <p class="repo-paragraph">
+              Production-ready Jenkins pipeline for automated Kubernetes HPA management with CPU and memory-based autoscaling, deployment discovery, validation, and AWS EKS integration.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="rtag"><i class="devicon-kubernetes-plain colored"></i> Kubernetes HPA</span>
+              <span class="rtag"><i class="devicon-amazonwebservices-plain colored"></i> AWS EKS</span>
+              <span class="rtag">Autoscaling</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/jenkins-kubernetes-hpa-manager" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 6. jenkins-eks-poddisruptionbudget-manager -->
+          <div class="repo-card glow-hover-card" data-category="cicd kubernetes cloud" id="repo-jenkins-pdb">
+            <div class="repo-card-top">
+              <div class="repo-type-icon k8s-icon">
+                <i class="devicon-kubernetes-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; High Availability</span>
+            </div>
+            <h3 class="repo-heading">jenkins-eks-poddisruptionbudget-manager</h3>
+            <p class="repo-paragraph">
+              Automated Jenkins pipeline for generating and managing Kubernetes PodDisruptionBudgets across Amazon EKS workloads with configurable availability policies and optional AWS IAM role assumption.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="rtag"><i class="devicon-kubernetes-plain colored"></i> Kubernetes PDB</span>
+              <span class="rtag"><i class="devicon-amazonwebservices-plain colored"></i> Amazon EKS</span>
+              <span class="rtag">IAM Roles</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/jenkins-eks-poddisruptionbudget-manager" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 7. jenkins-eks-rollout-restart -->
+          <div class="repo-card glow-hover-card" data-category="cicd kubernetes cloud" id="repo-jenkins-rollout">
+            <div class="repo-card-top">
+              <div class="repo-type-icon jenkins-icon">
+                <i class="devicon-jenkins-line colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; Zero Downtime</span>
+            </div>
+            <h3 class="repo-heading">jenkins-eks-rollout-restart</h3>
+            <p class="repo-paragraph">
+              Safe Jenkins pipeline for controlled Kubernetes workload restarts on Amazon EKS with dry-run mode, approval gates, and automated rollout verification.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="rtag"><i class="devicon-kubernetes-plain colored"></i> Amazon EKS</span>
+              <span class="rtag">Rollout Verification</span>
+              <span class="rtag">Zero-Downtime</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/jenkins-eks-rollout-restart" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 8. jenkins-ecr-docker-image-builder -->
+          <div class="repo-card glow-hover-card" data-category="cicd cloud" id="repo-jenkins-ecr">
+            <div class="repo-card-top">
+              <div class="repo-type-icon docker-icon">
+                <i class="devicon-docker-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; Container CI/CD</span>
+            </div>
+            <h3 class="repo-heading">jenkins-ecr-docker-image-builder</h3>
+            <p class="repo-paragraph">
+              Reusable Jenkins CI/CD pipeline for building Docker images and publishing versioned releases to Amazon ECR, with secure credential handling and configurable build parameters.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span class="rtag"><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span class="rtag"><i class="devicon-amazonwebservices-plain colored"></i> Amazon ECR</span>
+              <span class="rtag">Image Tagging</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/jenkins-ecr-docker-image-builder" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 9. nexus-repository-mirror -->
+          <div class="repo-card glow-hover-card" data-category="cicd monitoring" id="repo-nexus-mirror">
+            <div class="repo-card-top">
+              <div class="repo-type-icon bash-icon">
+                <i class="devicon-bash-plain colored"></i>
+              </div>
+              <span class="repo-status-badge">Public &bull; Artifact Tooling</span>
+            </div>
+            <h3 class="repo-heading">nexus-repository-mirror</h3>
+            <p class="repo-paragraph">
+              Bash-based Nexus Repository mirroring tool for securely transferring artifacts between Sonatype Nexus repositories with pagination, retries, logging, failure tracking, and environment-based credential management.
+            </p>
+            <div class="repo-tags-wrap">
+              <span class="rtag"><i class="devicon-bash-plain colored"></i> Bash / Shell</span>
+              <span class="rtag">Sonatype Nexus</span>
+              <span class="rtag">Artifact Mirroring</span>
+              <span class="rtag">DevOps</span>
+            </div>
+            <div class="repo-card-bottom">
+              <a href="https://github.com/ChaminduAttanayaka/nexus-repository-mirror" target="_blank" rel="noreferrer" class="repo-github-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="explore-all-repos-cta">
+          <a href="https://github.com/ChaminduAttanayaka?tab=repositories" target="_blank" rel="noreferrer" class="btn-secondary-action btn-glow" id="btn-explore-all-github">
+            <i class="devicon-github-original"></i>
+            <span>View All Repositories on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 6. VERIFIED CREDLY CERTIFICATIONS (REAL BADGES & TILT ANIMATION)        -->
+    <!-- ======================================================================= -->
+    <section class="section-block reveal-on-scroll" id="credentials" aria-label="Verified Professional Certifications">
+      <div class="content-bound">
+        <div class="section-title-wrap">
+          <span class="eyebrow-accent">CREDENTIALS</span>
+          <h2 class="section-headline">Verified Professional Certifications</h2>
+          <p class="section-subtitle">Officially certified and verified by AWS, HashiCorp, Aviatrix, Google, and Cisco.</p>
+        </div>
+
+        <div class="certifications-grid-view" id="certs-grid-container">
+
+          <!-- 1. AWS SA Professional -->
+          <div class="credential-card glow-hover-card" id="cert-sap">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/aws-sap.png" alt="AWS Certified Solutions Architect - Professional Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+              <h3 class="cred-card-title">AWS Certified Solutions Architect – Professional</h3>
+              <p class="cred-card-desc">Advanced multi-tier cloud architectures, high availability, disaster recovery, security governance, and multi-account organization design.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/49f4ee4f-9369-45b3-b2ee-5746739dee85/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. AWS SA Associate -->
+          <div class="credential-card glow-hover-card" id="cert-saa">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/aws-saa.png" alt="AWS Certified Solutions Architect - Associate Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+              <h3 class="cred-card-title">AWS Certified Solutions Architect – Associate</h3>
+              <p class="cred-card-desc">Compute, storage, database, networking, and security best practices aligned with the AWS Well-Architected Framework.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/21e8bd17-01db-4223-a10e-15ed348ce876/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. AWS SysOps Administrator Associate -->
+          <div class="credential-card glow-hover-card" id="cert-soa">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/aws-soa.png" alt="AWS Certified SysOps Administrator - Associate Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+              <h3 class="cred-card-title">AWS Certified SysOps Administrator – Associate</h3>
+              <p class="cred-card-desc">Deploying, managing, and operating scalable systems, automated health checks, metric alarms, and backup remediation.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/4eea941d-709c-4107-bb08-5de8dcbe4fec/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. HashiCorp Terraform Associate -->
+          <div class="credential-card glow-hover-card" id="cert-terraform">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/hashicorp-terraform.png" alt="HashiCorp Certified: Terraform Associate Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-hashi"><i class="devicon-terraform-plain colored"></i> HashiCorp</span>
+              <h3 class="cred-card-title">HashiCorp Certified: Terraform Associate (003)</h3>
+              <p class="cred-card-desc">Infrastructure as Code (IaC) principles, state management, module creation, resource provisioning, and Terraform Cloud workflows.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/86aea91f-c183-4ea8-a518-ca9cedf50ba3/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Aviatrix Multi-Cloud Network Associate -->
+          <div class="credential-card glow-hover-card" id="cert-aviatrix">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/aviatrix-mcna.png" alt="Aviatrix Multi-Cloud Network Associate Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-aviatrix">Aviatrix</span>
+              <h3 class="cred-card-title">Multicloud Network Associate</h3>
+              <p class="cred-card-desc">Enterprise multi-cloud networking architecture across AWS, Azure, GCP, and OCI with Transit firewalls and encryption.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/d39ce3f1-fdfb-45f2-8eb0-0748ac9ffb43/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Google IT Support Professional -->
+          <div class="credential-card glow-hover-card" id="cert-google">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/google-it-support.png" alt="Google IT Support Professional Certificate Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-google"><i class="devicon-googlecloud-plain colored"></i> Google</span>
+              <h3 class="cred-card-title">Google IT Support Professional Certificate</h3>
+              <p class="cred-card-desc">System administration, networking fundamentals, operating system troubleshooting, and cybersecurity essentials.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/e26d22cc-ae26-4d77-9943-972659f9a9cc/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Cisco CCNA: Intro to Networks -->
+          <div class="credential-card glow-hover-card" id="cert-cisco">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/cisco-ccna.png" alt="Cisco CCNA: Introduction to Networks Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-cisco">Cisco</span>
+              <h3 class="cred-card-title">CCNA: Introduction to Networks</h3>
+              <p class="cred-card-desc">IP addressing (IPv4/IPv6), subnetting, OSI model, Ethernet switching, routing protocols, and network media standards.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/544a475d-d06d-44bc-b609-fa33021148d4/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. AWS Academy Cloud Foundations -->
+          <div class="credential-card glow-hover-card" id="cert-aws-grad">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/aws-academy.png" alt="AWS Academy Graduate Cloud Foundations Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-aws"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+              <h3 class="cred-card-title">AWS Academy Graduate – Cloud Foundations</h3>
+              <p class="cred-card-desc">Core cloud computing concepts, AWS global infrastructure, core cloud services, compliance, and billing models.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/da0ed672-0156-4fd8-8cd5-7cdadde5f765/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Cisco Networking Academy Learn-A-Thon 2023 -->
+          <div class="credential-card glow-hover-card" id="cert-cisco-learnathon">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/cisco-learnathon.png" alt="Cisco Networking Academy Learn-A-Thon 2023 Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-cisco">Cisco</span>
+              <h3 class="cred-card-title">Networking Academy Learn-A-Thon 2023</h3>
+              <p class="cred-card-desc">Earned through intensive technology mastery and participation in the Cisco Networking Academy Learn-A-Thon.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/02557ecd-a8dc-4d19-ba39-484dcd4c9643/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Cisco Introduction to Packet Tracer -->
+          <div class="credential-card glow-hover-card" id="cert-cisco-pt">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/cisco-packet-tracer.png" alt="Cisco Introduction to Packet Tracer Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-cisco">Cisco</span>
+              <h3 class="cred-card-title">Introduction to Packet Tracer</h3>
+              <p class="cred-card-desc">Network simulation, topology design, device configuration, packet inspection, and troubleshooting using Cisco Packet Tracer.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/7fd67e67-83f1-436e-a119-b114feb37bc7/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Cisco Introduction to IoT -->
+          <div class="credential-card glow-hover-card" id="cert-cisco-iot">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/cisco-iot.png" alt="Cisco Introduction to IoT Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-cisco">Cisco</span>
+              <h3 class="cred-card-title">Introduction to IoT</h3>
+              <p class="cred-card-desc">Internet of Things architecture, digital transformation, connected device ecosystems, sensors, automation, and analytics.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/d5553a78-e163-4808-85ec-929f55996c73/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. Cisco Introduction to Cybersecurity -->
+          <div class="credential-card glow-hover-card" id="cert-cisco-cyber">
+            <div class="cred-badge-box">
+              <img src="/assets/img/badges/cisco-cybersecurity.png" alt="Cisco Introduction to Cybersecurity Badge" class="cred-badge-img" loading="lazy" />
+            </div>
+            <div class="cred-card-info">
+              <span class="cred-issuer-tag tag-cisco">Cisco</span>
+              <h3 class="cred-card-title">Introduction to Cybersecurity</h3>
+              <p class="cred-card-desc">Cyber threat landscapes, security best practices, vulnerability detection, privacy, confidentiality, and defense strategies.</p>
+              <div class="cred-card-meta-bottom">
+                <span class="cred-verified-badge"><span class="v-beacon"></span>Verified</span>
+                <a href="https://www.credly.com/badges/ae9d02a5-ca10-475a-8c0e-e4fa24604959/public_url" target="_blank" rel="noreferrer" class="cred-link">Verify on Credly &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Credly Transcript Full Banner with Shimmer Effect -->
+        <div class="credly-transcript-card glow-hover-card">
+          <div class="transcript-info">
+            <h4 class="transcript-title">Explore Full Credly Transcript (12 Verified Badges)</h4>
+            <p class="transcript-desc">Direct credential verification on Credly for all issued AWS, HashiCorp, Aviatrix, Cisco, and Google certifications.</p>
+          </div>
+          <a href="https://www.credly.com/users/chamindu-attanayaka" target="_blank" rel="noreferrer" class="btn-primary-action btn-ripple" id="btn-transcript-cta">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>View Transcript on Credly</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 7. CONTACT & CONNECT SECTION                                           -->
+    <!-- ======================================================================= -->
+    <section class="section-block reveal-on-scroll" id="contact" aria-label="Contact and Communication Channels">
+      <div class="content-bound">
+        <div class="contact-card-frame glow-hover-card" id="contact-wrapper">
+          <div class="contact-content-center">
+            <span class="eyebrow-accent">LET'S CONNECT</span>
+            <h2 class="contact-headline">Ready to Build Scalable Cloud Systems Together?</h2>
+            <p class="contact-subhead">Whether you are hiring for a Senior DevOps, Platform Architect, or Cloud Infrastructure role, let's connect.</p>
+          </div>
+
+          <div class="contact-channels-grid">
+            
+            <!-- Email Box -->
+            <a href="mailto:chamindu.m.a@gmail.com" class="channel-card glow-hover-card" id="contact-link-email">
+              <div class="channel-icon-wrap">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="channel-text-wrap">
+                <span class="channel-label">Email Me Directly</span>
+                <span class="channel-value">Chamindu.m.a@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn Box -->
+            <a href="https://www.linkedin.com/in/chaminduattanayaka/" target="_blank" rel="noreferrer" class="channel-card glow-hover-card" id="contact-link-linkedin">
+              <div class="channel-icon-wrap">
+                <i class="devicon-linkedin-plain"></i>
+              </div>
+              <div class="channel-text-wrap">
+                <span class="channel-label">LinkedIn Profile</span>
+                <span class="channel-value">linkedin.com/in/chaminduattanayaka</span>
+              </div>
+            </a>
+
+            <!-- GitHub Box -->
+            <a href="https://github.com/ChaminduAttanayaka?tab=repositories" target="_blank" rel="noreferrer" class="channel-card glow-hover-card" id="contact-link-github">
+              <div class="channel-icon-wrap">
+                <i class="devicon-github-original"></i>
+              </div>
+              <div class="channel-text-wrap">
+                <span class="channel-label">GitHub Repositories</span>
+                <span class="channel-value">ChaminduAttanayaka (9 Public Repos)</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 8. MINIMAL FOOTER                                                       -->
+    <!-- ======================================================================= -->
+    <footer class="bottom-footer">
+      <div class="content-bound footer-inner">
+        <p class="footer-copy">&copy; 2026 Chamindu Attanayaka &bull; Senior DevOps &amp; Multi-Cloud Platform Engineer</p>
+        <a href="#home" class="footer-scroll-top" id="btn-footer-top">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="floating-back-to-top" id="floating-back-to-top" aria-label="Scroll to top" title="Back to top">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+  </div>
+
+  <!-- Interactive JavaScript Application Engine -->
+  <script src="assets/js/app.js?v=6"></script>
 </body>
 </html>

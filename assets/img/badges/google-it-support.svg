@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" width="340" height="340">
+  <defs>
+    <linearGradient id="goog-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="goog-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4" />
+      <stop offset="33%" stop-color="#EA4335" />
+      <stop offset="66%" stop-color="#FBBC05" />
+      <stop offset="100%" stop-color="#34A853" />
+    </linearGradient>
+    <filter id="goog-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Outer Hexagon Shadow & Fill -->
+  <polygon points="170,12 315,95 315,245 170,328 25,245 25,95" fill="url(#goog-bg)" stroke="url(#goog-border)" stroke-width="7" filter="url(#goog-shadow)" stroke-linejoin="round" />
+
+  <!-- Inner Accent Line -->
+  <polygon points="170,24 300,99 300,237 170,312 40,237 40,99" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="6,4" />
+
+  <!-- Google "G" Icon -->
+  <g transform="translate(170, 72) scale(1.1)">
+    <path d="M0 -22 C12.1 -22 20.3 -16.8 24.9 -12.4 L18.6 -6.3 C15.4 -9.4 10.9 -11.9 0 -11.9 C-10.8 -11.9 -19.5 -3.2 -19.5 7.6 C-19.5 18.4 -10.8 27.1 0 27.1 C12.5 27.1 17.8 18.2 18.5 12.8 L0 12.8 L0 3.2 L28.2 3.2 C28.5 4.9 28.7 6.9 28.7 9.3 C28.7 18 25.6 25.6 19.5 31.2 C14.6 35.7 7.9 38 0 38 C-16.8 38 -30.4 24.4 -30.4 7.6 C-30.4 -9.2 -16.8 -22 0 -22 Z" fill="#4285F4" />
+    <!-- Google Colors Slice Simulation -->
+    <circle cx="-12" cy="-8" r="7" fill="#EA4335" />
+    <circle cx="-12" cy="18" r="7" fill="#FBBC05" />
+    <circle cx="10" cy="22" r="7" fill="#34A853" />
+    <circle cx="14" cy="-2" r="7" fill="#4285F4" />
+  </g>
+
+  <!-- Google Label -->
+  <text x="170" y="128" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#60A5FA" letter-spacing="2">GOOGLE</text>
+
+  <!-- IT Support Title -->
+  <text x="170" y="162" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" letter-spacing="-0.5">IT Support</text>
+
+  <!-- Professional Certificate Banner -->
+  <g transform="translate(170, 222)">
+    <polygon points="-110,-16 110,-16 100,16 -100,16" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5" />
+    <text x="0" y="5" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="12" fill="#FFFFFF" letter-spacing="1.5">PROFESSIONAL</text>
+  </g>
+
+  <!-- Verified Mark -->
+  <circle cx="170" cy="276" r="13" fill="#1E293B" stroke="#34A853" stroke-width="2" />
+  <path d="M165,276 L169,280 L176,272" fill="none" stroke="#34A853" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
