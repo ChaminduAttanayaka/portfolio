@@ -57,8 +57,8 @@ function initTypewriter() {
 
   const titles = [
     'DevOps Engineer',
-    'Multi-Cloud Architect',
-    'Kubernetes & GitOps Specialist',
+    'CICD Specialist',
+    'Kubernetes Specialist',
     'Terraform IaC Engineer'
   ];
 
@@ -600,6 +600,7 @@ function initMobileNavigation() {
 
   function openDrawer() {
     drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
     toggleBtn.classList.add('is-active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -607,37 +608,71 @@ function initMobileNavigation() {
 
   function closeDrawer() {
     drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
     toggleBtn.classList.remove('is-active');
     toggleBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
-  toggleBtn.addEventListener('click', (e) => {
+  const handleToggle = (e) => {
+    e.preventDefault();
     e.stopPropagation();
     if (drawer.classList.contains('is-open')) {
       closeDrawer();
     } else {
       openDrawer();
     }
-  });
+  };
+
+  toggleBtn.addEventListener('click', handleToggle);
 
   if (closeBtn) {
     closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       closeDrawer();
     });
   }
 
-  // Close when clicking any nav item
+  // Handle mobile drawer links navigation
   navItems.forEach((item) => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      const targetId = item.getAttribute('href');
       closeDrawer();
+
+      if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          setTimeout(() => {
+            const headerOffset = 70;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            if (history.pushState) {
+              history.pushState(null, null, targetId);
+            }
+          }, 80);
+        }
+      }
     });
   });
 
-  // Close when clicking outside drawer inner
+  // Close when tapping the dark backdrop
   drawer.addEventListener('click', (e) => {
     if (e.target === drawer) {
+      closeDrawer();
+    }
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
       closeDrawer();
     }
   });
