@@ -21,30 +21,59 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================================================
    0. SMOOTH SCROLLING ENGINE
    ========================================================================== */
+function smoothScrollTo(targetPosition, duration = 750) {
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  if (Math.abs(distance) < 5) return;
+  
+  let startTime = null;
+
+  // Custom ease-in-out quintic easing for fluid feel
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '') return;
+  // Global delegated smooth scrolling handler
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+
+    const targetId = anchor.getAttribute('href');
+    if (!targetId || targetId === '#' || targetId.length <= 1) return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault();
       
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        const headerOffset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const isMobile = window.innerWidth <= 768;
+      const headerOffset = targetId === '#home' ? 0 : (isMobile ? 70 : 80);
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - headerOffset);
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+      smoothScrollTo(offsetPosition, 650);
 
-        // Update URL hash without jumping
-        if (history.pushState) {
-          history.pushState(null, null, targetId);
-        }
+      // Update URL hash smoothly without instant page jump
+      if (history.pushState) {
+        history.pushState(null, null, targetId);
       }
-    });
+    }
   });
 }
 
@@ -534,10 +563,7 @@ function initBackToTop() {
 
   btnTop.addEventListener('click', (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    smoothScrollTo(0, 600);
   });
 }
 
@@ -645,14 +671,11 @@ function initMobileNavigation() {
         if (targetElement) {
           e.preventDefault();
           setTimeout(() => {
-            const headerOffset = 70;
+            const headerOffset = targetId === '#home' ? 0 : 70;
             const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - headerOffset);
 
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
+            smoothScrollTo(offsetPosition, 650);
 
             if (history.pushState) {
               history.pushState(null, null, targetId);
