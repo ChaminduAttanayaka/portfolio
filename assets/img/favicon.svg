@@ -1,10 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop stop-color="#35d4ff"/>
-      <stop offset="1" stop-color="#1677ff"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#06111c"/>
-  <path d="M12 46L25 16h10l17 30H41l-4-8H24l-3 8H12zm15-16h7l-4-8-3 8z" fill="url(#g)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#040814"/>
+  <path fill="#ffffff" fill-rule="evenodd" d="
+    M 155 168
+    H 248
+    C 285 168 308 191 308 228
+    C 308 265 285 288 248 288
+    H 197
+    V 344
+    H 155
+    Z
+    M 197 202
+    V 254
+    H 244
+    C 264 254 274 243 274 228
+    C 274 213 264 202 244 202
+    Z
+    
+    M 334 218
+    H 312
+    V 250
+    H 334
+    V 344
+    H 374
+    V 250
+    H 398
+    V 218
+    H 374
+    V 194
+    C 374 182 380 176 392 176
+    H 398
+    V 144
+    H 382
+    C 350 144 334 162 334 194
+    Z
+  "/>
 </svg>
