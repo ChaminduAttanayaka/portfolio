@@ -44,13 +44,15 @@ http://localhost:8080
 3. Select your repository.
 4. Configure Build settings:
    - **Framework preset**: `None`
-   - **Build command**: *(leave blank or `npm run build`)*
-   - **Build output directory**: `.` *(or leave blank / root)*
-5. Click **Save and Deploy**. Cloudflare's global edge network will serve your site with instant SSL, HTTP/3, and DDoS protection.
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+   - **Deploy command**: *(leave blank)*
+5. Click **Save and Deploy**.
 
 ### Method 2 — Direct Upload via Wrangler CLI
 ```bash
-npx wrangler pages deploy . --project-name=chamindu-devops-portfolio
+npm run build
+npx wrangler pages deploy ./dist --project-name=chamindu-devops-portfolio
 ```
 
 ## Deploy to GitHub Pages
