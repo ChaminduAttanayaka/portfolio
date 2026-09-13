@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050911" />
+  <title>404 — Page Not Found | Chamindu Attanayaka</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 800;
+      color: var(--accent-cyan);
+      line-height: 1;
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+    }
+    .error-title {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all var(--transition-smooth);
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
+    }
+    .error-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(2, 132, 199, 0.55);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-orb orb-primary"></div>
+    <div class="ambient-orb orb-secondary"></div>
+  </div>
+
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Route Not Found</h1>
+    <p class="error-desc">
+      The requested endpoint or resource does not exist in this deployment.
+    </p>
+    <a href="/" class="error-btn">
+      <span>&larr; Return to Portfolio</span>
+    </a>
+  </div>
+</body>
+</html>

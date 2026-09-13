@@ -1,0 +1,14 @@
+# Cloudflare Pages Redirects
+/overview       /#overview        301
+/stack          /#architecture    301
+/architecture   /#architecture    301
+/repositories   /#repositories    301
+/projects       /#repositories    301
+/certifications /#credentials     301
+/credentials    /#credentials     301
+/contact        /#contact         301
+
+# Fast Shortcuts
+/github         https://github.com/chamindu-attanayaka          302
+/linkedin       https://www.linkedin.com/in/chamindu-attanayaka 302
+/credly         https://www.credly.com/users/chamindu-attanayaka 302

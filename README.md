@@ -36,6 +36,23 @@ Then open:
 http://localhost:8080
 ```
 
+## Deploy to Cloudflare Pages
+
+### Method 1 — Git Integration (Recommended)
+1. Push your repository to **GitHub** or **GitLab**.
+2. Go to the **Cloudflare Dashboard** → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
+3. Select your repository.
+4. Configure Build settings:
+   - **Framework preset**: `None`
+   - **Build command**: *(leave blank or `npm run build`)*
+   - **Build output directory**: `.` *(or leave blank / root)*
+5. Click **Save and Deploy**. Cloudflare's global edge network will serve your site with instant SSL, HTTP/3, and DDoS protection.
+
+### Method 2 — Direct Upload via Wrangler CLI
+```bash
+npx wrangler pages deploy . --project-name=chamindu-devops-portfolio
+```
+
 ## Deploy to GitHub Pages
 
 1. Create a normal repository, for example `devops-portfolio`.
